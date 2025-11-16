@@ -7,7 +7,7 @@ from werkzeug.utils import secure_filename
 
 # --- Flask App Setup ---
 app = Flask(__name__, static_folder='.', static_url_path='')
-app.config['UPLOAD_FOLDER'] = 'uploads'
+app.config['UPLOAD_FOLDER'] = '/tmp'
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
 # --- Your Analysis Functions (Copied from your script) ---
