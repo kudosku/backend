@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tender Analysis Report</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <h1>Tender Document Analyzer</h1>
+        <p>Upload your PDF tender document to automatically extract key info and identify risks.</p>
+
+        <div class="upload-section">
+            <div id="drop-area">
+                <input type="file" id="file-input" accept=".pdf" hidden>
+                <label for="file-input" id="drop-label">
+                    <span class="drop-icon">📄</span>
+                    <strong>Drag & Drop a PDF here</strong>
+                    <span>or click to browse</span>
+                </label>
+            </div>
+            <button id="analyze-button" disabled>Analyze File</button>
+        </div>
+
+        <div id="report-section" class="report-section" hidden>
+            
+            <div id="loader" class="loader" hidden></div>
+
+            <div id="error-message" class="error-message" hidden></div>
+
+            <div id="results" class="results-grid" hidden>
+                
+                <div class="report-card" id="risk-score-card">
+                    <h3>Overall Risk Level</h3>
+                    <div id="risk-level" class="risk-level">---</div>
+                </div>
+
+                <div class="report-card">
+                    <h3>Extracted Information</h3>
+                    <ul class="info-list">
+                        <li><strong>Deadline:</strong> <span id="info-deadline">Not found</span></li>
+                        <li><strong>Budget:</strong> <span id="info-budget">Not found</span></li>
+                        <li><strong>Contact:</strong> <span id.="info-contact">Not found</span></li>
+                    </ul>
+                </div>
+
+                <div class="report-card full-width">
+                    <h3>Detected Risks & Missing Sections</h3>
+                    <ul id="risk-list" class="risk-list">
+                        <li>No risks detected.</li>
+                    </ul>
+                </div>
+
+                <div class="report-card full-width">
+                    <h3>Fast Summary (First 100 lines)</h3>
+                    <pre id="summary-text" class="summary-box"></pre>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
