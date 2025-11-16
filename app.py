@@ -6,7 +6,7 @@ from flask import Flask, request, jsonify, make_response
 from werkzeug.utils import secure_filename
 
 # --- Flask App Setup ---
-app = Flask(__name__, static_folder='.')
+app = Flask(__name__, static_folder='.', static_url_path='')
 app.config['UPLOAD_FOLDER'] = 'uploads'
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
