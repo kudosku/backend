@@ -1,0 +1,208 @@
+/* Basic Setup */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+p {
+    color: #555;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+/* 1. Upload Section */
+.upload-section {
+    margin-bottom: 2rem;
+}
+
+#drop-area {
+    border: 3px dashed #d0dbe4;
+    border-radius: 8px;
+    padding: 2.5rem;
+    background-color: #fafcfe;
+    transition: all 0.3s ease;
+}
+
+#drop-area.dragging {
+    border-color: #007aff;
+    background-color: #f0f8ff;
+}
+
+#drop-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+#drop-label .drop-icon {
+    font-size: 3rem;
+    color: #007aff;
+}
+
+#drop-label strong {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin: 0.5rem 0;
+}
+
+#drop-label span {
+    color: #777;
+}
+
+#analyze-button {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #007aff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+#analyze-button:disabled {
+    background-color: #c0c0c0;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+#analyze-button:not(:disabled):hover {
+    background-color: #005ecb;
+}
+
+/* 2. Report Section */
+.report-section {
+    text-align: left;
+}
+
+/* Loader */
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #007aff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 40px auto;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Error Message */
+.error-message {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #c62828;
+    border-radius: 8px;
+    padding: 1rem;
+    font-weight: 500;
+}
+
+/* Results Grid */
+.results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.report-card {
+    background-color: #fdfdfd;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.report-card.full-width {
+    grid-column: 1 / -1;
+}
+
+.report-card h3 {
+    margin-top: 0;
+    color: #007aff;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 0.5rem;
+}
+
+/* Risk Score Card */
+.risk-level {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 1rem 0;
+}
+.risk-low { color: #28a745; }
+.risk-medium { color: #ffc107; }
+.risk-high { color: #dc3545; }
+
+/* Info List */
+.info-list {
+    list-style: none;
+    padding: 0;
+}
+.info-list li {
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+.info-list li:last-child {
+    border-bottom: none;
+}
+.info-list span {
+    color: #555;
+    font-weight: 500;
+}
+
+/* Risk List */
+.risk-list {
+    padding-left: 20px;
+}
+.risk-list li {
+    color: #c62828;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+.risk-list li.no-risk {
+    color: #28a745;
+    font-weight: 500;
+}
+
+/* Summary Box */
+.summary-box {
+    background-color: #f8f8f8;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 1rem;
+    max-height: 300px;
+    overflow-y: auto;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+}
+
+/* Hidden Utility */
+[hidden] {
+    display: none !important;
+}
