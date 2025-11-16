@@ -6,7 +6,7 @@ from flask import Flask, request, jsonify, make_response
 from werkzeug.utils import secure_filename
 
 # --- Flask App Setup ---
-app = Flask(__name__)
+app = Flask(__name__, static_folder='.')
 app.config['UPLOAD_FOLDER'] = 'uploads'
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
@@ -180,7 +180,7 @@ def index():
 
 if __name__ == '__main__':
     # Set the static folder so Flask can find index.html, css, and js
-    app.static_folder = '.'
+    
     # Get the port number from the environment variable (set by Render)
     # Default to 10000 if not found (for local testing)
     port = int(os.environ.get('PORT', 10000))
